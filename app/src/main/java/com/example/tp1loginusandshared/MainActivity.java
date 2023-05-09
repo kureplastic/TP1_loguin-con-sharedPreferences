@@ -2,6 +2,7 @@ package com.example.tp1loginusandshared;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -22,21 +23,29 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         vm = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
 
-        //listener para boton
+        //listener para botones
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //tomar los datos y pasarlos al view model o al API CLIENT
-                vm.login(binding.etEmail.getText().toString(),binding.etPassword.getText().toString());
+                String email = binding.etEmail.getText().toString();
+                String pass = binding.etPassword.getText().toString();
+                vm.login(email,pass);
             }
         });
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ir a otra vista
-                Intent intent = new Intent(MainActivity.this,RegistroActivity.class);
-                intent.putExtra("logueado",false);
+                Intent intent = new Intent(MainActivity.this,RegistroActivity.class)
+                        .putExtra("logueado",false);
                 startActivity(intent);
+            }
+        });
+        vm.getMutableError().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String error) {
+                binding.tvError.setText(error);
+                binding.etEmail.setError(error);
+                binding.etPassword.setError(error);
             }
         });
 

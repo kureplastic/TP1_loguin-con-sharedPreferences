@@ -7,70 +7,79 @@
     tools:context=".RegistroActivity">
 
     <EditText
+        android:id="@+id/etPass"
+        android:layout_width="349dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
+
+    <EditText
         android:id="@+id/etNombre"
-        android:layout_width="215dp"
-        android:layout_height="42dp"
+        android:layout_width="333dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <EditText
         android:id="@+id/etApellido"
-        android:layout_width="215dp"
-        android:layout_height="42dp"
+        android:layout_width="342dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="Apellido"
         android:inputType="text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.273" />
 
     <EditText
         android:id="@+id/etDni"
-        android:layout_width="215dp"
-        android:layout_height="42dp"
+        android:layout_width="339dp"
+        android:layout_height="63dp"
         android:ems="10"
         android:hint="DNI"
-        android:inputType="text"
+        android:inputType="numberSigned"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.386" />
 
     <EditText
         android:id="@+id/etMail"
-        android:layout_width="215dp"
-        android:layout_height="42dp"
+        android:layout_width="352dp"
+        android:layout_height="66dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
-
-    <EditText
-        android:id="@+id/etPass"
-        android:layout_width="215dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        app:layout_constraintVertical_bias="0.511" />
 
     <Button
         android:id="@+id/btGuardar"
@@ -83,5 +92,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPass"
-        app:layout_constraintVertical_bias="0.577" />
+        app:layout_constraintVertical_bias="0.281" />
 </androidx.constraintlayout.widget.ConstraintLayout>

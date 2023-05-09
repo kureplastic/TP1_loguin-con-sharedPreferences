@@ -31,11 +31,11 @@ public class ApiClient {
 
     public static Persona leer(Context context){
         SharedPreferences sp = conectar(context);
-        String dni = sp.getString("dni", "-1");
-        String nombre = sp.getString("nombre","-1");
-        String apellido = sp.getString("apellido","-1");
-        String email = sp.getString("email","-1");
-        String password = sp.getString("password","-1");
+        String dni = sp.getString("dni", "no data");
+        String nombre = sp.getString("nombre","no data");
+        String apellido = sp.getString("apellido","no data");
+        String email = sp.getString("email","no data");
+        String password = sp.getString("password","no data");
 
         Persona usuario = new Persona(nombre,dni,apellido,password,email);
         return usuario;
@@ -45,11 +45,11 @@ public class ApiClient {
         Persona usuario = null;
         SharedPreferences sp = conectar(context);
 
-        String dni = sp.getString("dni", "-1");
-        String nombre = sp.getString("nombre","-1");
-        String apellido = sp.getString("apellido","-1");
-        String email = sp.getString("email","-1");
-        String pass = sp.getString("password","-1");
+        String dni = sp.getString("dni", "no data");
+        String nombre = sp.getString("nombre","no data");
+        String apellido = sp.getString("apellido","no data");
+        String email = sp.getString("email","no data");
+        String pass = sp.getString("password","no data");
 
         if(mail.equals(email) && password.equals(pass)){
             usuario = new Persona(nombre,dni,apellido,password,mail);

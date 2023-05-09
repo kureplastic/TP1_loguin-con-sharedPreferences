@@ -7,35 +7,34 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.tp1loginusandshared.models.Persona;
 import com.example.tp1loginusandshared.requests.ApiClient;
 
 public class MainActivityViewModel extends AndroidViewModel {
-
-    private ApiClient API;
     private Context context;
+    private MutableLiveData<String> mutableError;
 
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
         context = application.getApplicationContext();
+        mutableError = new MutableLiveData<>();
     }
 
-    public void guardar(Persona usuario){
-
+    public MutableLiveData<String> getMutableError() {
+        return mutableError;
     }
+
     public void login(String mail, String pass){
-        //llamar api
         Persona user = ApiClient.login(context,mail,pass);
-        //si tengo usuario quiere decir que existe
         if(user == null){
-            //advertencia tipo mutable
-            Toast.makeText(context, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
+            mutableError.setValue("Corrobore usuario y/0 contraseña!");
         }
         else{
             Intent intent = new Intent(context,RegistroActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //avisar que va logged in
             intent.putExtra("logueado",true);
             context.startActivity(intent);
         }
